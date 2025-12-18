@@ -1,7 +1,7 @@
 ## Half-Quadratic Quantization (HQQ)
 This repository contains the official implementation of Half-Quadratic Quantization (<b>HQQ</b>) presented in our articles: 
-* HQQ: https://mobiusml.github.io/hqq_blog/
-* HQQ+: https://mobiusml.github.io/1bit_blog/
+* HQQ: https://dropbox.github.io/hqq_blog/
+* HQQ+: https://dropbox.github.io/1bit_blog/
 
 ### What is HQQ?
 <b>HQQ</b> is a fast and accurate model quantizer that skips the need for calibration data. Quantize the largest models, without calibration data, in just a few minutes at most 🚀.
@@ -19,7 +19,7 @@ This repository contains the official implementation of Half-Quadratic Quantizat
 </ul>
   
   <b>What is the quality of the quantized models? </b><br>
-  We have detailed benchmarks on both language and vision models. Please refer to our blog posts: <a href="https://mobiusml.github.io/hqq_blog/">HQQ</a>, <a href="https://mobiusml.github.io/1bit_blog/">HQQ+</a>.<br> 
+  We have detailed benchmarks on both language and vision models. Please refer to our blog posts: <a href="https://dropbox.github.io/hqq_blog/">HQQ</a>, <a href="https://dropbox.github.io/1bit_blog/">HQQ+</a>.<br> 
 
   <b>What is the speed of the quantized models?</b><br>
   4-bit models with `axis=1` can use optimized inference fused kernels. Moreover, we focus on making hqq fully compatible with `torch.compile` which speeds-up both training and inference. For more details, please refer to the backend section below. <br>
@@ -44,7 +44,7 @@ You can install hqq via
 pip install hqq;
 
 #Latest updates - recommended
-pip install git+https://github.com/mobiusml/hqq.git; 
+pip install git+https://github.com/dropbox/hqq.git; 
 
 #Disable building the CUDA kernels for the aten backend
 DISABLE_CUDA=1 pip install ...
@@ -191,7 +191,7 @@ quant_config = {'self_attn.q_proj':q4_config,
 ```
 
 ### VLLM
-You can use HQQ in <a href="https://github.com/vllm-project/vllm/">vllm</a>. Make sure to install <a href="https://github.com/mobiusml/gemlite/">GemLite</a> before using the backend.
+You can use HQQ in <a href="https://github.com/vllm-project/vllm/">vllm</a>. Make sure to install <a href="https://github.com/dropbox/gemlite/">GemLite</a> before using the backend.
 
 ```Python
 #Or you can quantize on-the-fly
@@ -265,7 +265,7 @@ We provide a variety of examples demonstrating model quantization across differe
 ```
 @misc{badri2023hqq,
 title  = {Half-Quadratic Quantization of Large Machine Learning Models},
-url    = {https://mobiusml.github.io/hqq_blog/},
+url    = {https://dropbox.github.io/hqq_blog/},
 author = {Hicham Badri and Appu Shaji},
 month  = {November},
 year   = {2023}
