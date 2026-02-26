@@ -246,6 +246,8 @@ def optimize_weights_proximal_legacy(
         else:
             break
 
+        beta *= kappa
+
     scale = scale.to(tensor.device)
     zero = zero.to(tensor.device)
     del W_f, W_q, W_r
